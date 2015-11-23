@@ -17,5 +17,7 @@ public class power_method{
         return null;
     }
     
+    public static void main(String[]args) {
     
+    }
 }
