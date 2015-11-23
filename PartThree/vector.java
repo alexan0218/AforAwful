@@ -1,7 +1,7 @@
 public class vector{
     public float[] contents;
     public int size;
-    public float largest;
+    //public float largest;
     
     public vector(float[] vector) {
         contents = vector;
@@ -13,7 +13,7 @@ public class vector{
     }
     
     public vector scale() {
-        float[] answer = new float[input.length];
+        float[] answer = new float[contents.length];
         float max = 0;
         for (int i = 0; i < contents.length; i++) {
             if (contents[i] > max) {
@@ -27,9 +27,9 @@ public class vector{
     }
     
     public float dot(vector v) {
-        float[] answer = 0
-        for (int i = 0; i < v.length; i++) {
-            float += v.contents[i] * contents[i];
+        float answer = 0;
+        for (int i = 0; i < v.size; i++) {
+            answer += v.contents[i] * contents[i];
         }
         return answer;
     }

@@ -1,11 +1,13 @@
 public class power_method_result {
     public float eigenvalue;
-    public float[] eigenvector;
+    public vector eigenvector;
     public int iterations;
+    public float trace;
     
-    public power_method_result(float eigenvalueIn, float[] eigenvectorIn, int iterationsIn) {
+    public power_method_result(float eigenvalueIn, vector eigenvectorIn, int iterationsIn, float t) {
         eigenvalue = eigenvalueIn;
         eigenvector = eigenvectorIn;
         iterations = iterationsIn;
+        trace = t;
     }
 }
