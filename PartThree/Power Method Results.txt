@@ -1,0 +1,16 @@
+results for originals:
+1:
+Eigenvalue: 8.16989286308883; iterations: 6; trace: 8.0;
+eigenvector = 
+	0.5331240683745387
+	1.0
+	0.6074798486322031
+
+
+2:
+Eigenvalue: 4.999992319921358; iterations: 7; trace: 4.0;
+eigenvector = 
+	0.49999520001535996
+	1.0
+
+
