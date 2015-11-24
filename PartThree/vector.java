@@ -1,9 +1,9 @@
 public class vector{
-    public float[] contents;
+    public double[] contents;
     public int size;
-    //public float largest;
+    //public double largest;
     
-    public vector(float[] vector) {
+    public vector(double[] vector) {
         contents = vector;
         size = vector.length;
     }
@@ -13,8 +13,8 @@ public class vector{
     }
     
     public vector scale() {
-        float[] answer = new float[contents.length];
-        float max = 0;
+        double[] answer = new double[contents.length];
+        double max = contents[0];
         for (int i = 0; i < contents.length; i++) {
             if (contents[i] > max) {
                 max = contents[i];
@@ -26,11 +26,19 @@ public class vector{
         return new vector(answer);
     }
     
-    public float dot(vector v) {
-        float answer = 0;
+    public double dot(vector v) {
+        double answer = 0;
         for (int i = 0; i < v.size; i++) {
             answer += v.contents[i] * contents[i];
         }
         return answer;
+    }
+    
+    public String toString() {
+        String ans = "";
+        for (int i = 0; i < contents.length; i++) {
+            ans += "\t" + contents[i] + "\n";
+        }
+        return ans;
     }
 }
