@@ -109,54 +109,70 @@ public class IterativeMethods {
 
     public static void main(String[] args) throws IOException {
         //============================== Jacobi's method part ============================================
-        File jcbResultFile = new File("Jacobi_iter_result_File.txt");
+
+        File jcbResultFile = new File("Convergence_of_iterative_methods.txt");
         OutputStream outStream1 = new FileOutputStream(jcbResultFile);
+        outStream1.write(("=====================================HH method begins =====================================\n").getBytes());
         ArrayList<Vector> vectors1 = generateVectors();
         double jcbsum0 = 0;
         double jcbsum1 = 0;
         double jcbsum2 = 0;
-        int jcbiterCount = 0;
+        ArrayList<Integer> jcbiterCount = new ArrayList<>();
         for (Vector v : vectors1) {
+            System.out.print(v.asString());
             Pair jcbanswer = jacobi_iter(v, 0.00005, 100);
             outStream1.write((jcbanswer.toString() + "\n").getBytes());
             jcbsum0 += jcbanswer.getEntry(0);
             jcbsum1 += jcbanswer.getEntry(1);
             jcbsum2 += jcbanswer.getEntry(2);
-            jcbiterCount += jcbanswer.getIteration();
+            jcbiterCount.add(jcbanswer.getIteration());
         }
         jcbsum0 = jcbsum0/100.0;
         jcbsum1 = jcbsum1/100.0;
         jcbsum2 = jcbsum2/100.0;
-        double avgIter = jcbiterCount/100.0;
-        outStream1.write(("Average: " + jcbsum0 + " " + jcbsum1 + " " + jcbsum2 + " \nAverage: " + avgIter + " iterations").getBytes());
-        outStream1.flush();
-        outStream1.close();
+        //double avgIter = jcbiterCount/100.0;
+        outStream1.write(("Solution: " + jcbsum0 + " " + jcbsum1 + " " + jcbsum2 + " \n").getBytes());
+        //outStream1.flush();
+        //outStream1.close();
 
 
         //============================== GS method part ============================================
-        File gsResultFile = new File("gs_iter_result_File.txt");
-        OutputStream outStream2 = new FileOutputStream(gsResultFile);
+        //File gsResultFile = new File("gs_iter_result_File.txt");
+        //OutputStream outStream2 = new FileOutputStream(gsResultFile);
+        outStream1.write(("=====================================GS method begins======================================\n").getBytes());
         ArrayList<Vector> vectors2 = generateVectors();
         double gssum0 = 0;
         double gssum1 = 0;
         double gssum2 = 0;
-        int gsiterCount = 0;
+        ArrayList<Integer> gsiterCount = new ArrayList<>();
         for (Vector v : vectors2) {
             Pair gsanswer = gs_iter(v, 0.00005, 100);
-            outStream2.write(gsanswer.toString().getBytes());
-            outStream2.write("\n".getBytes());
+            outStream1.write(gsanswer.toString().getBytes());
+            outStream1.write("\n".getBytes());
             gssum0 += gsanswer.getEntry(0);
             gssum1 += gsanswer.getEntry(1);
             gssum2 += gsanswer.getEntry(2);
-            gsiterCount += gsanswer.getIteration();
+            gsiterCount.add(gsanswer.getIteration());
         }
         gssum0 = gssum0/100.0;
         gssum1 = gssum1/100.0;
         gssum2 = gssum2/100.0;
-        double avgIter2 = gsiterCount/100.0;
-        outStream2.write(("Average: " + gssum0 + " " + gssum1 + " " + gssum2 + " \nAverage: " + avgIter2 + " iterations").getBytes());
-        outStream2.flush();
-        outStream2.close();
+        //double avgIter2 = gsiterCount/100.0;
+        outStream1.write(("Solution: " + gssum0 + " " + gssum1 + " " + gssum2 + " \n").getBytes());
+
+        //============================ Ratio of iteration ===========================================
+        ArrayList<Double> ratios = new ArrayList<>(100);
+        outStream1.write(("=========================Ratio of iterations starts here ( N jcb/N gs ) ===================\n").getBytes());
+        for (int i = 0; i < 100; i++) {
+            double ratio = ((double) jcbiterCount.get(i))/gsiterCount.get(i);
+            ratios.add(ratio);
+        }
+        for (int e = 0; e < 100; e++) {
+            outStream1.write((ratios.get(e) + "\n").getBytes());
+        }
+
+        outStream1.flush();
+        outStream1.close();
     }
 
 

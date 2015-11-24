@@ -22,10 +22,17 @@ public class Vector {
     }
 
     public String toString() {
-        String result = "Vector Xn: " + entry[0] + ", " + entry[1] + ", " + entry[2] + "   ";
+        double entry1 = (entry[0] - 9.0/190) * (entry[0] - 9.0/190);
+        double entry2 = (entry[1] - 28.0/475) * (entry[1] - 28.0/475);
+        double entry3 = (entry[2] - 33.0/475) * (entry[2] - 33.0/475);
+        double error = Math.sqrt(entry1 + entry2 + entry3);
+        String result = error + "   ";
         return result;
     }
 
+    public String asString() {
+        return ("Vector Xn: " + entry[0] + " " + entry[1] + " " + entry[2] + "\n");
+    }
 
 
 

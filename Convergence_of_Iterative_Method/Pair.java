@@ -11,7 +11,7 @@ public class Pair {
     }
 
     public String toString() {
-        return (v.toString() + " Iterations: " + iteration);
+        return (v.toString() + " " + iteration);
     }
 
    /* public Pair nullPair() {
