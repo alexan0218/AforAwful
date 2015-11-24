@@ -1,6 +1,6 @@
 Introduction for Math 2605 project part two:
 
-Written by : An Jihai 
+Written by : An Jihai , Alan Jiang
 
 This part if written in Java and can be run from command lines.
 
@@ -12,6 +12,10 @@ You can find all required data records at locations below:
 2.The Average Error of jacobi can be found in the text file at the root directory of part two
   "Convergence_of_Iterative_Method" (File: "Convergence_of_iterative_methods.txt")
 
+  javac *.java -> java IterativeMethods 
+
+  By doing this, the txt file will be generated 
+
 3.The Average Error of gauss_seidel can be found in the text file at the root directory of part two
   "Convergence_of_Iterative_Method" (File: "Convergence_of_iterative_methods.txt")
 
@@ -21,3 +25,7 @@ You can find all required data records at locations below:
 4.The scatterplot chart is in the Excel file ("Convergence of iterative methods data.xlsx")
 
 5.The written part is in the Word file ("Convergence_of_iterative_methods.docx")
+
+6.javac *.java -> java IterativeMethods 
+
+  By doing this, a txt file will be generated 
