@@ -2,7 +2,7 @@ Introduction for Math 2605 project part two:
 
 Written by : An Jihai , Alan Jiang
 
-This part if written in Java and can be run from command lines.
+This part is written in Java and can be run from command lines.
 
 You can find all required data records at locations below:
 
