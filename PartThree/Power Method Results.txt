@@ -1,9 +1,0 @@
-results for originals:
-1:
-Eigenvalue: 8.169892339324951; iterations: 6; trace: 8.0;
-eigenvector = 
-	0.5331237292545989
-	1.0
-	0.6074797011515546
-
-
