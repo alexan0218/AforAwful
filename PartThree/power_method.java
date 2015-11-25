@@ -38,14 +38,15 @@ public class power_method{
     }
     
     public static void main(String[]args) throws IOException {
-        if (args.length != 1) {
-            System.out.println("Takes one filename as the file to read matrices from");
+        if (args.length < 1 || args.length > 2) {
+            System.out.println("Takes two filenames: first as the file to read matrices from, second as the one to read vectors from.  Second is optional.");
             return;
         }
         MatrixScanner MS = new MatrixScanner();
         double[][][] matrixArray = MS.readMatrix(new File(args[0]));
-        
+        double[] vectorArray;
         vector defaultVector;
+
         double tolerance = .00005f;
         int iterationCap = 100;
         matrix[] matrixContainer = new matrix[matrixArray.length];
@@ -56,7 +57,13 @@ public class power_method{
             matrixContainer[i] = new matrix(matrixArray[i]);
             matrixContainer[i].transpose();//because I was dumb and designed this with column major backing.
             matrixContainer[i].calculateDeterminant();
-            defaultVector = generateDefaultVector(matrixContainer[i].contents.length);
+            if (args.length != 2) {
+                defaultVector = generateDefaultVector(matrixContainer[i].contents.length);
+            } else {
+                VectorScanner VS = new VectorScanner();
+                vectorArray = VS.readVector(new File(args[1]));
+                defaultVector = new vector(vectorArray);
+            }
             original[i] = PowerIterate(matrixContainer[i], defaultVector, tolerance, iterationCap);
             matrixContainer[i].calculateInverse();
             //inverse[i] = PowerIterate(matrixContainer[i].inverse, defaultVector, tolerance, iterationCap);

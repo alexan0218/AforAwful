@@ -4,7 +4,7 @@ Written by : An Jihai, Alan Jiang
 
 This part is written in Java and run from the command prompt/console.
 
-To run, java power_method and add one argument which should be the .dat file with the matrices to be tested.  Matrices in the file must only be separated by space or comma and not both.
+To run, java power_method and add one argument which should be the .dat file with the matrices to be tested.  Matrices in the file must only be separated by space or comma and not both.  A second argument containing a .dat file with a single vector inside may also be included.
 
 Write up and scatter plots can be found in Write Up.doc.
 
