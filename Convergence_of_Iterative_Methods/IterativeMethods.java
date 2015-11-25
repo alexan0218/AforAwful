@@ -1,5 +1,3 @@
-import com.sun.org.apache.xalan.internal.xsltc.dom.MatchingIterator;
-
 import java.util.ArrayList;
 import java.io.*;
 import java.util.Random;
@@ -68,7 +66,7 @@ public class IterativeMethods {
         }
         if (error > tolerance) {
             System.out.println("After " + maxIteration + "iterations, the error is still larger than the tolerance");
-            System.exit(0);
+            return new Pair(null,0);
         }
         Pair result = new Pair(new Vector(generateEntries(x0, x1, x2)),iterationCounter);
         return result;
@@ -101,6 +99,7 @@ public class IterativeMethods {
         }
         if (error > tolerance) {
             System.out.println("After " + maxIteration + "iterations, the error is still larger than the tolerance");
+            return new Pair(null,0);
         }
         Pair result = new Pair(new Vector(generateEntries(x0, x1, x2)),iterationCounter);
         return result;
@@ -112,7 +111,7 @@ public class IterativeMethods {
 
         File jcbResultFile = new File("Convergence_of_iterative_methods.txt");
         OutputStream outStream1 = new FileOutputStream(jcbResultFile);
-        outStream1.write(("=====================================HH method begins =====================================\n").getBytes());
+        outStream1.write(("=====================================Jacobi's method begins =====================================\n").getBytes());
         ArrayList<Vector> vectors1 = generateVectors();
         double jcbsum0 = 0;
         double jcbsum1 = 0;
@@ -139,7 +138,7 @@ public class IterativeMethods {
         //============================== GS method part ============================================
         //File gsResultFile = new File("gs_iter_result_File.txt");
         //OutputStream outStream2 = new FileOutputStream(gsResultFile);
-        outStream1.write(("=====================================GS method begins======================================\n").getBytes());
+        outStream1.write(("=====================================Givens Rotation's method begins======================================\n").getBytes());
         ArrayList<Vector> vectors2 = generateVectors();
         double gssum0 = 0;
         double gssum1 = 0;

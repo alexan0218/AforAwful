@@ -14,10 +14,6 @@ public class Pair {
         return (v.toString() + " " + iteration);
     }
 
-   /* public Pair nullPair() {
-
-    }*/
-
     public double getEntry(int i) {
         return v.getEntry(i);
     }

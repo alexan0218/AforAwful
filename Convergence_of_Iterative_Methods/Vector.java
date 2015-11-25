@@ -31,7 +31,7 @@ public class Vector {
     }
 
     public String asString() {
-        return ("Vector Xn: " + entry[0] + " " + entry[1] + " " + entry[2] + "\n");
+        return ("Vector: " + entry[0] + " " + entry[1] + " " + entry[2] + "\n");
     }
 
 
