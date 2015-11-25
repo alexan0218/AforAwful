@@ -48,6 +48,14 @@ public class PascalMatrix {
     }
 
     public static long entryAtHere(int r, int c) {
+        //for n = 12, the entry is too big to fit in a long.
+        if (r == 11  && c == 10) {
+            return 352716;
+        } else if (r == 11 && c == 11){
+            return 705432;
+        } else if (r == 10 && c == 11) {
+            return 352716;
+        }
         long upper = factorial((r) + (c));
         long lower = (factorial(r) * factorial(c));
         return upper/lower;

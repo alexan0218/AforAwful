@@ -18,12 +18,20 @@ public class Matrix extends Vector {
 		c = m[0].length;
 		this.m = m;
 	}
+
 	public Matrix(int r, int c) {
 		this.r = r;
 		this.c = c;
 		this.m = new double[r][c];
 	}
 
+	public void setM(int i, int j, double data) {
+		m[i][j] = data;
+	}
+
+	public double[][] getM() {
+		return m;
+	}
 	public int getRowDimension() {
 		return r;
 	}
@@ -33,7 +41,6 @@ public class Matrix extends Vector {
 	public double[][] getArray() {
 		return m;
 	}
-
 	public String toString() {
 		String output = "";
         for (int j = 0; j < this.r; j++) {

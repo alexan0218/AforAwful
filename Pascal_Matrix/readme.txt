@@ -6,21 +6,21 @@ This part is written in Java and can be run from command lines.
 
 You can find all required data records at locations below:
 
-1.The lu_fact function is in class "LUDecomposition.java"
+1.To test lu_fact, qr_facthouseh, and qr_fact_givens functions : 
+		
+	javac *.java  -> java TestDecomposition testfilename.dat
 
-2.The qr_fact_househ and the qr_fact_givens functions are in class ""QRdecomposition.java"
+2. To test solve_lu_b and solve_qr_b functions :
+		
+	javac *.java -> java TestSolutions testfilename.dat
 
-3.The function "getError()" is in both classes above. 
+3. To get the Pascal Matrix all operations' outputs:
 
-4.The solve_lu_b function is in class "Solve_lu_b.java"
-
-5.The solve_qr_b function is in class "QRsolution.java"
-
-6.javac *.java -> java PascalMatrix 
+	javac *.java -> java PascalMatrix 
 
   a txt file will be generated and all solutions and errors 
 
   are in that file with readable alignment. 
 
-7.The plot was in the "Pascal_Matrix.xlsx"
 
+4.The plot was in the "Pascal_Matrix.xlsx"

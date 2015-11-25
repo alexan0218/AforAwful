@@ -26,7 +26,9 @@ public class QRdecomposition {
             Matrix q1 = (h1.multiple(2)).subtract(im);
             rm = q1.matrixMultiply(rm);
             qm = qm.matrixMultiply(q1.transpose());
+
         }
+        processR(rm);
     }
 
     public void qr_fact_givens(Matrix a) {
@@ -48,11 +50,22 @@ public class QRdecomposition {
                 Matrix q1 = new Matrix(temp);
                 rm = q1.matrixMultiply(rm);
                 qm = qm.matrixMultiply((q1).transpose());
+
             }
         }
+        processR(rm);
 
     }
 
+    private static void processR(Matrix r) {
+        //System.out.println("processed");
+        for (int i = 1; i < r.getRowDimension(); i++) {
+            for (int j = 0; j < i; j++) {
+                r.setM(i, j, 0.0);
+            }
+        }
+        //System.out.println(r.toString());
+    }
     private double sin(double a, double b) {
         return (b / Math.sqrt(a * a + b * b));
     }
