@@ -6,7 +6,7 @@ import java.util.ArrayList;
  */
 public class TestIterations {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NullPointerException{
 
         if (args.length != 3) {
             System.out.println("Arguments: fileName, tolerance, maxIterations");

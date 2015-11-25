@@ -18,7 +18,8 @@ You can find all required data records at locations below:
 ===============================================================================
 All date generated and collected were in the Excel file ("Convergence of iterative methods data.xlsx")
 You can directly check it if you don't want to spend time on examine the console
-Also, the scatterplot was in the Excel file as well.
+Also, the scatterplot was in the Excel file as well. Since all initial vectors are generated randomly,
+the generated file may contain different data from data in Excel file.
 ==================================================================================
 
 
