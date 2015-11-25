@@ -1,7 +1,7 @@
 ========== Team members ===========
 
 1 . Name: 	Alan Jiang
-	GTid:
+	GTid:	903087068
 	Section: C3
 
 2. 	Name: 	An Jihai
