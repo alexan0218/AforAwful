@@ -24,3 +24,5 @@ You can find all required data records at locations below:
 
 
 4.The plot was in the "Pascal_Matrix.xlsx"
+
+5.The written part was in "Pascal_Matrix.docx"
