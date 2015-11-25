@@ -139,12 +139,12 @@ public class IterativeMethods {
         //File gsResultFile = new File("gs_iter_result_File.txt");
         //OutputStream outStream2 = new FileOutputStream(gsResultFile);
         outStream1.write(("=====================================Givens Rotation's method begins======================================\n").getBytes());
-        ArrayList<Vector> vectors2 = generateVectors();
+        //ArrayList<Vector> vectors2 = generateVectors();
         double gssum0 = 0;
         double gssum1 = 0;
         double gssum2 = 0;
         ArrayList<Integer> gsiterCount = new ArrayList<>();
-        for (Vector v : vectors2) {
+        for (Vector v : vectors1) {
             Pair gsanswer = gs_iter(v, 0.00005, 100);
             outStream1.write(gsanswer.toString().getBytes());
             outStream1.write("\n".getBytes());

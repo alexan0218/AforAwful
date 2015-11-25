@@ -26,7 +26,7 @@ public class Vector {
         double entry2 = (entry[1] - 28.0/475) * (entry[1] - 28.0/475);
         double entry3 = (entry[2] - 33.0/475) * (entry[2] - 33.0/475);
         double error = Math.sqrt(entry1 + entry2 + entry3);
-        String result = error + "   ";
+        String result = "Vector: " + entry[0] + " " + entry[1] + " " + entry[2] + " " + "Error: " + error + "   ";
         return result;
     }
 

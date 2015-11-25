@@ -15,11 +15,16 @@ You can find all required data records at locations below:
   javac *.java -> java IterativeMethods 
 
   By doing this, the txt file will be generated 
+===============================================================================
+All date generated and collected were in the Excel file ("Convergence of iterative methods data.xlsx")
+You can directly check it if you don't want to spend time on examine the console
+Also, the scatterplot was in the Excel file as well.
+==================================================================================
+
 
 3. To test jacobi and gauss_seidel methods :
 	
 	javac *.java -> java TestIterations fileName Tolerance MaxIterations
 
-4.The scatterplot chart is in the Excel file ("Convergence of iterative methods data.xlsx")
 
 5.The written part is in the Word file ("Convergence_of_iterative_methods.docx")
